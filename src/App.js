@@ -1,28 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter, Switch, Route,
+} from 'react-router-dom';
 import './App.css';
+import Index from './components/Index';
 
 function App() {
+  // const [vocab, setVocab] = useState({});
+  // {word:sentence}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Index />
+          </Route>
+          <Route path="/home">
+            {/* <Home /> */}
+          </Route>
+          <Route path="/add-word">
+            {/* <AddWord /> */}
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
