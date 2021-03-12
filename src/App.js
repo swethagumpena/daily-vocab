@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import './App.css';
-import Index from './components/Index';
+import Index from './components/Index/Index';
+import Home from './components/Home/Home';
 
 function App() {
-  // const [vocab, setVocab] = useState({});
+  const [vocab] = useState({ eat: 'I am eating' });
   // {word:sentence}
   return (
     <div className="App">
@@ -17,7 +18,7 @@ function App() {
             <Index />
           </Route>
           <Route path="/home">
-            {/* <Home /> */}
+            <Home vocab={vocab} />
           </Route>
           <Route path="/add-word">
             {/* <AddWord /> */}
