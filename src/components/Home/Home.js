@@ -13,7 +13,7 @@ const Home = ({ vocab }) => {
   //   />
   // ));
   return (
-    <div>
+    <div data-testid="Home">
       <p className={styles.heading}>welcome back</p>
       <div className={styles.homeContainer}>
         <div className={styles.words}>

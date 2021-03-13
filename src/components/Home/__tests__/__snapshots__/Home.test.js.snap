@@ -2,7 +2,9 @@
 
 exports[`Home should match snapshot 1`] = `
 <div>
-  <div>
+  <div
+    data-testid="Home"
+  >
     <p
       class="heading"
     >

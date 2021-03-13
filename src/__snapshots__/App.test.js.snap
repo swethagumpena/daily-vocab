@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="page"
+      data-testid="Index"
+    >
+      <div
+        class="container"
+      >
+        <h3>
+          daily vocab!
+        </h3>
+        <p>
+          learn a new  word everyday!
+        </p>
+        <button
+          type="button"
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

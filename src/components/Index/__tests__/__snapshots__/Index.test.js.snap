@@ -4,6 +4,7 @@ exports[`Index should match snapshot 1`] = `
 <div>
   <div
     class="page"
+    data-testid="Index"
   >
     <div
       class="container"

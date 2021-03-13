@@ -29,6 +29,7 @@ describe(AddWord.name, () => {
     const addElement = screen.getByText('✓');
     expect(addElement.tagName).toBe('BUTTON');
     act(() => { fireEvent.click(addElement); });
-    // expect(document.location.href).toBe('http://localhost/home');
   });
+
+  // TODO - form on submit
 });
