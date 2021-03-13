@@ -1,0 +1,91 @@
+@import "../../styles/index.scss";
+
+.formContainer{
+    background-color: $primary-background-color;
+    height: 100vh;
+    margin: 0;
+}
+
+.formContainer p {
+    margin: 0;
+}
+
+.heading{
+    color: $primary-text-color;
+    font-family: "Inconsolata", monospace;
+    font-size: 3rem;
+    display: flex;
+    padding: 3rem;
+    background-color: $primary-background-color;
+    justify-content: center;
+}
+
+.formData{
+    display: flex;
+    justify-content: center;
+    font-family: "Inconsolata", monospace;
+
+}
+
+.formItems{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wordSentence{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin: 1rem;
+}
+
+input{
+    margin: 1rem 0;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: white;
+    background-color: rgb(234, 245, 250);
+}
+
+.formItems p{
+    margin: 0;
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+input text{
+    font-family: "Inconsolata", monospace;
+}
+
+button{
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.submitBtn{
+    padding: 0.25rem;
+    border-radius: 50%;
+    border: white;
+    background-color: $primary-text-color;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@include media-mixin($mobile-breakpoint){
+    .heading{
+        font-size: 2rem;
+    }
+    .formItems p{
+        font-size: 1rem;
+    }
+}

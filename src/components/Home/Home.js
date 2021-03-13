@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import styles from './Home.module.scss';
 
@@ -25,8 +25,9 @@ const Home = ({ vocab }) => {
           ))}
         </div>
       </div>
-
-      <button type="button" className={styles.button} onClick={() => history.push('/add-word')}>+</button>
+      <div className={styles.AddWordBtn}>
+        <button type="button" onClick={() => history.push('/add-word')}>+</button>
+      </div>
     </div>
   );
 };
@@ -48,5 +49,18 @@ const Home = ({ vocab }) => {
 //     {"word":"abate","sentence":"ertyu"},
 //     {"word":"compilant","sentence":"belie elish"}
 // ]
+
+const wordShape = PropTypes.shape({
+  word: PropTypes.string,
+  sentence: PropTypes.string,
+});
+
+const vocabShape = PropTypes.shape({
+  addWordData: PropTypes.shape(wordShape),
+});
+
+Home.propTypes = {
+  vocab: PropTypes.arrayOf(vocabShape).isRequired,
+};
 
 export default Home;
