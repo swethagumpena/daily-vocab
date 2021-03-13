@@ -11,25 +11,6 @@ import AddWord from './components/AddWordForm/AddWordForm';
 
 function App() {
   const [vocab, setVocab] = useState(Utils.getWordsFromLocalStorage('vocab') || []);
-  // const [vocab, setVocab] = useState([]);
-
-  // working
-  // const [vocab, setVocab] = useState(() => {
-  //   const localData = localStorage.getItem('vocab');
-  //   return localData ? JSON.parse(localData) : [];
-  // });
-
-  // const addNewVocab = (newVocab) => {
-  //   const newVocabitems = [...vocab, newVocab];
-  //   console.log('new', newVocabitems);
-  //   setVocab(newVocabitems);
-  //   Utils.saveWordToLocalStorage('vocab', newVocabitems);
-  //   console.log('kk', newVocab);
-  // };
-
-  // useEffect(() => {
-  //   setVocab(Utils.getWordsFromLocalStorage);
-  // }, []);
 
   const addNewVocab = (newVocab) => {
     const newVocabitems = [...vocab, newVocab];
@@ -40,10 +21,6 @@ function App() {
   useEffect(() => {
     Utils.saveWordToLocalStorage('vocab', vocab);
   }, [vocab]);
-
-  // useEffect(() => {
-  //   localStorage.setItem('vocab', JSON.stringify(vocab));
-  // }, [vocab]);
 
   return (
     <div className="App">

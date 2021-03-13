@@ -19,6 +19,7 @@ const Home = ({ vocab }) => {
         <div className={styles.words}>
           {vocab.map((item) => (
             <Card
+              key={item.addWordData.id}
               word={item.addWordData.word}
               sentence={item.addWordData.sentence}
             />
@@ -60,7 +61,7 @@ const vocabShape = PropTypes.shape({
 });
 
 Home.propTypes = {
-  vocab: PropTypes.arrayOf(vocabShape).isRequired,
+  vocab: PropTypes.arrayOf(PropTypes.objectOf(vocabShape)).isRequired,
 };
 
 export default Home;

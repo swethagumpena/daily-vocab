@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Card.module.scss';
 
 const Card = ({ word, sentence }) => (
-  <div>
+  <div data-testid="Card">
     <div className={styles.card}>
       {/* <div>{JSON.stringify(vocab)}</div> */}
       <p className={styles.word}>{word}</p>

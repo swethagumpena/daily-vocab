@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should match snapshot 1`] = `
+<div>
+  <div>
+    <p
+      class="heading"
+    >
+      welcome back
+    </p>
+    <div
+      class="homeContainer"
+    >
+      <div
+        class="words"
+      >
+        <div
+          data-testid="Card"
+        >
+          <div
+            class="card"
+          >
+            <p
+              class="word"
+            >
+              abet
+            </p>
+            <p
+              class="sentence"
+            >
+              abet a suicide
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="AddWordBtn"
+    >
+      <button
+        type="button"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>
+`;

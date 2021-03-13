@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './AddWordForm.module.scss';
 import AddWordSchema from '../../utils/validatiors/AddWordSchema';
 
@@ -11,6 +12,7 @@ const AddWord = ({ addNewVocab }) => {
     addWordData: {
       word: '',
       sentence: '',
+      id: uuidv4(),
     },
     submitted: false,
   });

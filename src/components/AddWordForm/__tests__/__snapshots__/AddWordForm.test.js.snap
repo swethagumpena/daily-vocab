@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddWord should match snapshot 1`] = `
+<div>
+  <div
+    class="formContainer"
+  >
+    <p
+      class="heading"
+    >
+      add a new word
+    </p>
+    <div
+      class="formData"
+    >
+      <form>
+        <div
+          class="formItems"
+        >
+          <label
+            class="wordSentence"
+            for="word"
+          >
+            <p>
+              What's the word:
+            </p>
+            <input
+              name="word"
+              placeholder="new word"
+              type="text"
+            />
+          </label>
+          <label
+            class="wordSentence"
+            for="sentence"
+          >
+            <p>
+              Let's use it in a sentence:
+            </p>
+            <input
+              name="sentence"
+              placeholder="new sentence"
+              type="text"
+            />
+          </label>
+        </div>
+        <button
+          class="submitBtn"
+          type="submit"
+        >
+          ✓
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
