@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import './Normalize.css';
-import Utils from './utils/utils';
+import Utils from './utils/localStorageUtils';
 import Index from './components/Index/Index';
 import Home from './components/Home/Home';
 import AddWord from './components/AddWordForm/AddWordForm';

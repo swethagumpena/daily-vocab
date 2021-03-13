@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line no-unused-vars
 import styles from './AddWordForm.module.scss';
+import AddWordSchema from '../../utils/validatiors/AddWordSchema';
 
 const AddWord = ({ addNewVocab }) => {
   const history = useHistory();
@@ -17,6 +17,7 @@ const AddWord = ({ addNewVocab }) => {
 
   const formik = useFormik({
     initialValues: addWordForm.addWordData,
+    validationSchema: AddWordSchema,
     onSubmit: (addWordData) => {
       addNewVocab({ addWordData });
       setAddWordForm({ addWordData, submitted: true });
@@ -42,6 +43,9 @@ const AddWord = ({ addNewVocab }) => {
                     onChange={formik.handleChange}
                   />
                 </label>
+                {formik.errors.word && (
+                <p>{formik.errors.word}</p>
+                )}
 
                 <label htmlFor="sentence" className={styles.wordSentence}>
                   <p>Let&#39;s use it in a sentence:</p>
@@ -52,6 +56,10 @@ const AddWord = ({ addNewVocab }) => {
                     onChange={formik.handleChange}
                   />
                 </label>
+                {formik.errors.sentence && (
+                <p>{formik.errors.sentence}</p>
+                )}
+
               </div>
               <button type="submit" className={styles.submitBtn}>✓</button>
             </form>
