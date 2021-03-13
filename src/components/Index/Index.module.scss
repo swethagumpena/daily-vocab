@@ -1,0 +1,42 @@
+@import "../../styles/index.scss";
+
+.page {
+    background-color: $primary-background-color;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    font-family: "Inconsolata", monospace;
+    font-size: 4.5rem;
+    letter-spacing: 0.25vw;
+    margin: 1rem;
+    color: $primary-text-color;
+}
+ 
+.container p {
+    font-family: "Inconsolata", monospace;
+    font-size: 2rem;
+    letter-spacing: 0.025vw;
+}
+
+.container button {
+    font-family: "Inconsolata", monospace;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: white;
+}
+
+@include media-mixin($mobile-breakpoint){
+    .container h3{
+        font-size: 3rem;
+    }
+    .container p{
+        font-size: 1.5rem;
+    }
+    .container button{
+        padding: 0.75rem;
+    }
+}
