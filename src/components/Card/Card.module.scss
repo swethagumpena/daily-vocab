@@ -11,6 +11,7 @@
     align-items: flex-start;
     background-color: $primary-background-color;
     color: $primary-text-color;
+    font-family: "Inconsolata", monospace
 }
 
 .card p{
@@ -22,20 +23,32 @@
     font-size: 1.5rem;
 }
 
+// @media (max-width: 72rem) {
+//     .card {
+//         width:  calc((100% - (6 * 0.125rem + 6 * 0.5rem)) / 3);
+//     }
+// }
+
 @media (max-width: 72rem) {
     .card {
-        width:  calc((100% - (6 * 0.125rem + 6 * 0.5rem)) / 3);
+        width:  20rem;
     }
 }
+
+// @media (max-width: 48rem) {
+//     .card {
+//         width:  calc((100% - (4 * 0.125rem + 4 * 0.5rem)) / 2);
+//     }
+// }
 
 @media (max-width: 48rem) {
-    .card {
-        width:  calc((100% - (4 * 0.125rem + 4 * 0.5rem)) / 2);
+        .card {
+            width:  22.75rem;
+        }
     }
-}
 
-@media (max-width: 30rem) {
-    .card {
-        width: 100%;
-    }
-}
+// @media (max-width: 30rem) {
+//     .card {
+//         width: 100%;
+//     }
+// }

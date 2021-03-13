@@ -2,21 +2,32 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Card from '../Card/Card';
+import styles from './Home.module.scss';
 
 const Home = ({ vocab }) => {
   const history = useHistory();
-  const singleVocab = vocab.map((item) => (
-    <Card
-      word={item.addWordData.word}
-      sentence={item.addWordData.sentence}
-    />
-  ));
+  // const singleVocab = vocab.map((item) => (
+  //   <Card
+  //     word={item.addWordData.word}
+  //     sentence={item.addWordData.sentence}
+  //   />
+  // ));
   return (
-    <>
-      <div>Home</div>
-      {singleVocab}
-      <button type="button" onClick={() => history.push('/add-word')}>+</button>
-    </>
+    <div>
+      <p className={styles.heading}>welcome back</p>
+      <div className={styles.homeContainer}>
+        <div className={styles.words}>
+          {vocab.map((item) => (
+            <Card
+              word={item.addWordData.word}
+              sentence={item.addWordData.sentence}
+            />
+          ))}
+        </div>
+      </div>
+
+      <button type="button" className={styles.button} onClick={() => history.push('/add-word')}>+</button>
+    </div>
   );
 };
 
