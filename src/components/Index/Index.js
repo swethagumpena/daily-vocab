@@ -7,8 +7,8 @@ const Index = () => {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <h3>Daily Vocab!</h3>
-        <p>Learn a new  word everyday!</p>
+        <h3>daily vocab!</h3>
+        <p>learn a new  word everyday!</p>
         <button type="button" onClick={() => history.push('/home')}>Get Started</button>
       </div>
     </div>
