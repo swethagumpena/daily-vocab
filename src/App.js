@@ -1,21 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import './App.css';
+import Utils from './utils/utils';
 import Index from './components/Index/Index';
 import Home from './components/Home/Home';
-import AddWord from './components/AddWord/AddWord';
+import AddWord from './components/AddWordForm/AddWordForm';
 
 function App() {
-  const [vocab] = useState([
-    { word: 'eat', sentence: 'I am eating' },
-    { word: 'eat', sentence: 'I am eating' },
-  ]);
+  const [vocab, setVocab] = useState(Utils.getWordsFromLocalStorage('vocab') || []);
+  // const [vocab, setVocab] = useState([]);
+
+  // working
+  // const [vocab, setVocab] = useState(() => {
+  //   const localData = localStorage.getItem('vocab');
+  //   return localData ? JSON.parse(localData) : [];
+  // });
+
+  // const addNewVocab = (newVocab) => {
+  //   const newVocabitems = [...vocab, newVocab];
+  //   console.log('new', newVocabitems);
+  //   setVocab(newVocabitems);
+  //   Utils.saveWordToLocalStorage('vocab', newVocabitems);
+  //   console.log('kk', newVocab);
+  // };
+
+  // useEffect(() => {
+  //   setVocab(Utils.getWordsFromLocalStorage);
+  // }, []);
 
   const addNewVocab = (newVocab) => {
-    console.log(newVocab);
+    const newVocabitems = [...vocab, newVocab];
+    console.log('new', newVocabitems);
+    setVocab(newVocabitems);
   };
+
+  useEffect(() => {
+    Utils.saveWordToLocalStorage('vocab', vocab);
+  }, [vocab]);
+
+  // useEffect(() => {
+  //   localStorage.setItem('vocab', JSON.stringify(vocab));
+  // }, [vocab]);
 
   return (
     <div className="App">

@@ -2,8 +2,10 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
+import { useHistory } from 'react-router-dom';
 
-const AddWord = ({ vocab, addNewVocab }) => {
+const AddWord = ({ addNewVocab }) => {
+  const history = useHistory();
   const [addWordForm, setAddWordForm] = useState({
     addWordData: {
       word: '',
@@ -14,7 +16,13 @@ const AddWord = ({ vocab, addNewVocab }) => {
 
   const formik = useFormik({
     initialValues: addWordForm.addWordData,
-    onSubmit: (addWordData) => setAddWordForm({ addWordData, submitted: true }),
+    // onSubmit: (addWordData) => setAddWordForm({ addWordData, submitted: true }),
+    // onSubmit: (addWordData) => addNewVocab({ addWordData }), // WORKING
+    onSubmit: (addWordData) => {
+      addNewVocab({ addWordData });
+      setAddWordForm({ addWordData, submitted: true });
+      history.push('/home');
+    },
   });
 
   return (
