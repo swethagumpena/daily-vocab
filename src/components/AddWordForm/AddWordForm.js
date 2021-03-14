@@ -33,7 +33,6 @@ const AddWord = ({ addNewVocab }) => {
       <div className={styles.formData}>
         {!addWordForm.submitted ? (
           <>
-            {/* <p>What's the word</p> */}
             <form onSubmit={formik.handleSubmit}>
               <div className={styles.formItems}>
                 <label htmlFor="word" className={styles.wordSentence}>

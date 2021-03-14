@@ -1,11 +1,11 @@
 @import "../../styles/index.scss";
 
 .page {
-    background-color: $primary-background-color;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(#ADD2FF, white);
 }
 
 .container{
@@ -33,6 +33,9 @@
     padding: 1rem;
     border-radius: 2rem;
     border: white;
+    background-color: #ADD2FF;
+    color: $primary-text-color;
+    font-weight: bold;
 }
 
 @include media-mixin($mobile-breakpoint){
@@ -43,6 +46,6 @@
         font-size: 1.5rem;
     }
     .container button{
-        padding: 0.75rem;
+        padding: 1rem;
     }
 }

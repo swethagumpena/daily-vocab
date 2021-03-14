@@ -10,11 +10,17 @@ import Home from './components/Home/Home';
 import AddWord from './components/AddWordForm/AddWordForm';
 
 function App() {
-  const [vocab, setVocab] = useState(Utils.getWordsFromLocalStorage('vocab') || []);
+  // const [vocab, setVocab] = useState(Utils.getWordsFromLocalStorage('vocab') || []);
+  const [vocab, setVocab] = useState([]);
+
+  useEffect(() => {
+    const localStorageData = Utils.getWordsFromLocalStorage('vocab');
+    if (localStorageData) { setVocab(localStorageData); }
+  }, []);
 
   const addNewVocab = (newVocab) => {
     const newVocabitems = [...vocab, newVocab];
-    console.log('new', newVocabitems);
+    // console.log('new', newVocabitems);
     setVocab(newVocabitems);
   };
 
